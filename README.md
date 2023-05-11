@@ -1,2 +1,2 @@
 # hello-world
-this is a note that tell you what i first doing in github
+this is a note that tell you what i first doing in github 哈哈哈
