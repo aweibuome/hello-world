@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>响应式网页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.header {
+			background-color: #333;
+			color: #fff;
+			display: flex;
+			align-items: center;
+			height: 80px;
+			padding: 0 20px;
+		}
+
+		.logo {
+			font-size: 30px;
+			font-weight: bold;
+			margin-right: auto;
+		}
+
+		.menu {
+			display: none;
+		}
+
+		.toggle-menu {
+			display: block;
+			font-size: 30px;
+			cursor: pointer;
+		}
+
+		.nav {
+			background-color: #555;
+			color: #fff;
+			display: none;
+			flex-direction: column;
+			padding: 20px;
+			position: absolute;
+			top: 80px;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.nav a {
+			color: #fff;
+			font-size: 20px;
+			margin-bottom: 10px;
+			text-decoration: none;
+		}
+
+		.content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding: 20px;
+		}
+
+		.card {
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+			margin: 10px;
+			padding: 20px;
+			width: 300px;
+		}
+
+		.card h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.card p {
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+
+		@media only screen and (min-width: 768px) {
+			.menu {
+				display: flex;
+				align-items: center;
+			}
+
+			.toggle-menu {
+				display: none;
+			}
+
+			.nav {
+				background-color: transparent;
+				flex-direction: row;
+				position: static;
+				top: auto;
+				width: auto;
+			}
+
+			.nav a {
+				margin-bottom: 0;
+				margin-right: 20px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<span class="logo">Logo</span>
+		<nav class="menu">
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Services</a>
+			<a href="#">Contact</a>
+		</nav>
+		<span class="toggle-menu">&#9776;</span>
+		<nav class="nav">
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Services</a>
+			<a href="#">Contact</a>
+		</nav>
+	</header>
+	<main class="content">
+		<div class="card">
+			<h2>Card 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula dolor eu risus maximus interdum. Duis vitae neque in nunc dapibus faucibus non nec urna.</p>
+		</div>
+		<div class="card">
+			<h2>Card 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula dolor eu risus maximus interdum. Duis vitae neque in nunc dapibus faucibus non nec urna.</p>
+		</div>
+		<div class="card">
+			<h2>Card 3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vehicula dolor eu risus maximus interdum. Duis vitae neque in nunc dapibus faucibus non nec urna.</p>
+		</div>
+	</main>
+	<script type="text/javascript">
+		const toggleMenu = document.querySelector('.toggle-menu');
+		const nav = document.querySelector('.nav');
+
+		toggleMenu.addEventListener('click', () => {
+			if (nav.style.display === 'flex') {
+				nav.style.display = 'none';
+			} else {
+				nav.style.display = 'flex';
+			}
+		});
+	</script>
+</body>
+</html>
